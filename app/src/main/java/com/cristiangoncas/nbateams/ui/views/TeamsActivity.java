@@ -21,11 +21,6 @@ public class TeamsActivity extends AppCompatActivity {
 
     TeamViewModel teamViewModel;
 
-    /*
-     * Unit tests to verify classes
-     * UI tests to verify UI
-     * */
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
