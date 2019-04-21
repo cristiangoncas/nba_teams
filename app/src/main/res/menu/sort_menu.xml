@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/alph_desc" android:title="@string/alph_desc"/>
+    <item android:id="@+id/alph_asc" android:title="@string/alph_asc"/>
+    <item android:id="@+id/wins" android:title="@string/wins"/>
+    <item android:id="@+id/losses" android:title="@string/losses"/>
+</menu>

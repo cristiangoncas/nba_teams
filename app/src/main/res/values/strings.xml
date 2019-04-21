@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">NBATeams</string>
+    <string name="alph_asc">ABC ↑</string>
+    <string name="alph_desc">ABC ↓</string>
+    <string name="wins">Wins ↑</string>
+    <string name="losses">Wins ↓</string>
+    <string name="w">W</string>
+    <string name="l">L</string>
+    <string name="separator">-</string>
+</resources>

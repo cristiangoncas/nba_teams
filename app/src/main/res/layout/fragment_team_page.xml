@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="team" type="com.cristiangoncas.nbateams.data.models.Team"/>
+        <variable name="playersAdapter" type="com.cristiangoncas.nbateams.ui.adapters.ListPlayersAdapter"/>
+    </data>
+    <android.support.constraint.ConstraintLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <View
+                android:id="@+id/top_background"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/recycler_players"/>
+
+        <TextView
+                android:id="@+id/team_name"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginTop="?attr/actionBarSize"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:text="@{team.fullName}"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="Boston Celtics"/>
+
+
+        <TextView
+                android:id="@+id/team_wins"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:text="@{team.wins}"
+                app:layout_constraintTop_toBottomOf="@id/team_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/team_losses"
+                tools:text="45"/>
+
+        <TextView
+                android:id="@+id/w"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/w"
+                app:layout_constraintBaseline_toBaselineOf="@id/team_wins"
+                app:layout_constraintEnd_toStartOf="@id/team_wins"
+                tools:text="W"/>
+
+        <TextView
+                android:id="@+id/team_losses"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:text="@{team.losses}"
+                app:layout_constraintStart_toEndOf="@id/team_wins"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBaseline_toBaselineOf="@id/team_wins"
+                tools:text="20"/>
+
+        <TextView
+                android:id="@+id/l"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginStart="8dp"
+                android:text="@string/l"
+                app:layout_constraintBaseline_toBaselineOf="@id/team_losses"
+                app:layout_constraintStart_toEndOf="@id/team_losses"
+                tools:text="L"/>
+
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_players"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="12dp"
+                android:adapter="@{playersAdapter}"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/team_losses"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

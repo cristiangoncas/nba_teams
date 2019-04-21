@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="player" type="com.cristiangoncas.nbateams.data.models.Player"/>
+    </data>
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:padding="6dp">
+
+        <android.support.constraint.Guideline
+                android:id="@+id/center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_percent="0.5"
+                android:orientation="vertical"/>
+
+        <TextView
+                android:id="@+id/last_name"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:paddingStart="6dp"
+                android:paddingEnd="6dp"
+                android:gravity="center_vertical"
+                android:text="@{player.lastName}"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/center_vertical"
+                app:layout_constraintBottom_toTopOf="@id/first_name"
+                tools:text="Allen"
+        />
+
+        <TextView
+                android:id="@+id/first_name"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:paddingStart="6dp"
+                android:paddingEnd="6dp"
+                android:gravity="center_vertical"
+                android:text="@{player.firstName}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/center_vertical"
+                app:layout_constraintTop_toBottomOf="@id/last_name"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:text="Kadeem"
+        />
+
+        <TextView
+                android:id="@+id/number"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@{player.number}"
+                app:layout_constraintStart_toEndOf="@id/center_vertical"
+                app:layout_constraintEnd_toStartOf="@id/position"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:text="45"
+        />
+
+        <TextView
+                android:id="@+id/position"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@{player.position}"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/number"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="SG"
+        />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

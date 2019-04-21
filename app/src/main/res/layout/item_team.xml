@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="team" type="com.cristiangoncas.nbateams.data.models.Team"/>
+        <variable name="itemClickListener" type="com.cristiangoncas.nbateams.ui.adapters.ListTeamsAdapter.TeamSelected"/>
+    </data>
+    <LinearLayout
+            android:id="@+id/parent"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:padding="6dp"
+    android:onClick="@{()->itemClickListener.teamSelected(team)}">
+
+        <TextView
+                android:id="@+id/fullname"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:gravity="center_vertical"
+                android:text="@{team.fullName}"
+                tools:text="Boston Celtics"/>
+
+        <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:gravity="center_vertical|end"
+                android:text="@string/w"
+                tools:text="W"/>
+
+        <TextView
+                android:id="@+id/wins"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@{team.wins}"
+                tools:text="10"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:text="@string/separator"
+                tools:text=" - "/>
+
+        <TextView
+                android:id="@+id/losses"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@{team.losses}"
+                tools:text="30"/>
+
+        <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:gravity="center_vertical|start"
+                android:text="@string/l"
+                tools:text="L"/>
+
+    </LinearLayout>
+</layout>
